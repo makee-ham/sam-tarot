@@ -5,7 +5,7 @@ async function prepareDrawingCards() {
   cardLoadingStart();
   try {
     const tarotData = await fetchTarotData();
-    console.log(tarotData);
+    // console.log(tarotData);
   } catch (err) {
     console.error(err);
     alert(err.message);
@@ -13,3 +13,5 @@ async function prepareDrawingCards() {
     cardLoadingOver();
   }
 }
+
+// prepareDrawingCards();
