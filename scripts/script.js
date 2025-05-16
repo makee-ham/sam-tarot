@@ -1,8 +1,8 @@
 import { fetchTarotData } from "./tarot-api";
+import { cardLoadingStart, cardLoadingOver } from "./ui";
 
 async function prepareDrawingCards() {
-  // 로딩 시작
-
+  cardLoadingStart();
   try {
     const tarotData = await fetchTarotData();
     console.log(tarotData);
@@ -10,6 +10,6 @@ async function prepareDrawingCards() {
     console.error(err);
     alert(err.message);
   } finally {
-    // 로딩 종료
+    cardLoadingOver();
   }
 }
