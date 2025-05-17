@@ -8,7 +8,7 @@
   </head>
   <body>
     <!-- 랜딩 페이지 -->
-    <section id="landing" class="active">
+    <section id="landing" class="hidden">
       <h1>삼타로</h1>
       <p>세 장의 카드로 해결하는 당신의 고민</p>
       <button id="start-btn">시작하기</button>
@@ -26,12 +26,15 @@
     </section>
 
     <!-- 카드 뽑기 페이지 -->
-    <section id="draw" class="hidden">
+    <section id="draw" class="active">
       <button class="home-btn" data-target="landing">홈</button>
       <h2>마음속 질문을 떠올리며, 천천히 세 장의 카드를 골라보세요.</h2>
-      <div id="card-loading" class="hidden">셔플 중입니다...</div>
-      <!-- 78장 뒷면 좌르륵 마우스 드래그 -->
-      <div id="card-area"></div>
+      <p>이미 선택한 카드는 돌려놓을 수 없습니다.</p>
+      <div id="card-container">
+        <div id="card-loading" class="hidden">셔플 중입니다...</div>
+        <!-- 78장 뒷면 좌르륵 마우스 드래그 -->
+        <div id="card-area"></div>
+      </div>
       <div id="selected-cards"></div>
       <button id="get-result" disabled>리딩 결과 확인하기</button>
     </section>
@@ -44,6 +47,6 @@
       <button id="retry">다시 하기</button>
     </section>
 
-    <script src="./scripts/script.js"></script>
+    <script type="module" src="./scripts/script.js"></script>
   </body>
 </html>
