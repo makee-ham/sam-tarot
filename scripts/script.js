@@ -1,5 +1,9 @@
 import { fetchTarotData } from "./tarot-api.js";
-import { cardLoadingStart, cardLoadingOver, renderBackOfCards } from "./ui.js";
+import {
+  cardLoadingStart,
+  cardLoadingOver,
+  renderBackOfCards,
+} from "./ui/renderCards.js";
 
 import { getCardImgUrl } from "./utils/images.js";
 import { shuffleCards } from "./utils/shuffle.js";
