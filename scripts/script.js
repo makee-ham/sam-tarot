@@ -1,21 +1,20 @@
-import { fetchTarotData } from "./tarot-api";
-import { cardLoadingStart, cardLoadingOver } from "./ui";
+import { fetchTarotData } from "./tarot-api.js";
+import { cardLoadingStart, cardLoadingOver, renderBackOfCards } from "./ui.js";
 
-import { getCardImgUrl } from "./utils/images";
-import { shuffleCards } from "./utils/shuffle";
+import { getCardImgUrl } from "./utils/images.js";
+import { shuffleCards } from "./utils/shuffle.js";
 
 async function prepareDrawingCards() {
   cardLoadingStart();
   try {
     const tarotData = await fetchTarotData();
-    // console.log(tarotData);
     const shuffledCards = shuffleCards(tarotData);
     const cards = shuffledCards.map((card) => ({
       ...card,
       image: getCardImgUrl(card),
     }));
 
-    // 이제 여기서 cards를 뒷면으로 렌더하게...
+    renderBackOfCards(cards);
   } catch (err) {
     console.error(err);
     alert(err.message);
@@ -24,4 +23,6 @@ async function prepareDrawingCards() {
   }
 }
 
-// prepareDrawingCards();
+document.addEventListener("DOMContentLoaded", () => {
+  prepareDrawingCards();
+});

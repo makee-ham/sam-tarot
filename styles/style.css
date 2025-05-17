@@ -1,0 +1,35 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.hidden {
+  display: none;
+}
+
+#card-container {
+  width: 90vw;
+  height: 300px;
+  overflow: hidden;
+}
+/* #card-loading {
+} */
+#card-area {
+  width: calc(120px * 79);
+  height: 300px;
+  display: flex;
+  align-items: center;
+}
+.tarot-card {
+  width: 120px;
+  height: 200px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  object-fit: cover;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+.tarot-card:hover {
+  transform: scale(1.05);
+}
