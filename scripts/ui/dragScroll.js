@@ -30,6 +30,7 @@ export function addDragScroll(container) {
     isDown = false;
     container.classList.remove("dragging");
 
+    // 드래그였을 경우 클릭 이벤트 취소
     if (isDragging) {
       e.preventDefault();
       e.stopPropagation();
