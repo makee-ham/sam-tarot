@@ -9,7 +9,7 @@ export function handleCardClick(e) {
 
   const selectedCard = e.currentTarget;
   const selectedIndex = Number(selectedCard.dataset.index);
-  const cards = getCards();
+  const cards = getCards(); // cards' data
 
   selectedCard.classList.add("fade-out");
   selectedCards.push(cards[selectedIndex]);
@@ -20,4 +20,9 @@ export function handleCardClick(e) {
   cardArea.style.width = `${cardWidth * total}px`;
 
   renderSelectedCards(selectedCards);
+
+  if (selectedCards.length >= 3) {
+    const resultBtn = document.querySelector("#get-result");
+    resultBtn.disabled = false;
+  }
 }
