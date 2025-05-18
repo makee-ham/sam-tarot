@@ -1,4 +1,5 @@
 import { fetchTarotData } from "./tarot-api.js";
+
 import {
   cardLoadingStart,
   cardLoadingOver,
@@ -9,12 +10,14 @@ import { addDragScroll } from "./ui/dragScroll.js";
 import { getCardImgUrl } from "./utils/images.js";
 import { shuffleCards } from "./utils/shuffle.js";
 
+let cards = [];
+
 async function prepareDrawingCards() {
   cardLoadingStart();
   try {
     const tarotData = await fetchTarotData();
     const shuffledCards = shuffleCards(tarotData);
-    const cards = shuffledCards.map((card) => ({
+    cards = shuffledCards.map((card) => ({
       ...card,
       image: getCardImgUrl(card),
     }));
@@ -26,6 +29,10 @@ async function prepareDrawingCards() {
   } finally {
     cardLoadingOver();
   }
+}
+
+export function getCards() {
+  return cards;
 }
 
 document.addEventListener("DOMContentLoaded", () => {
