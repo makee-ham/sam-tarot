@@ -4,6 +4,7 @@ import {
   cardLoadingOver,
   renderBackOfCards,
 } from "./ui/renderCards.js";
+import { addDragScroll } from "./ui/dragScroll.js";
 
 import { getCardImgUrl } from "./utils/images.js";
 import { shuffleCards } from "./utils/shuffle.js";
@@ -29,4 +30,7 @@ async function prepareDrawingCards() {
 
 document.addEventListener("DOMContentLoaded", () => {
   prepareDrawingCards();
+
+  const cardContainer = document.querySelector("#card-container");
+  addDragScroll(cardContainer);
 });

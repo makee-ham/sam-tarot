@@ -8,10 +8,30 @@
   display: none;
 }
 
+img {
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
 #card-container {
   width: 90vw;
   height: 300px;
   overflow: hidden;
+  cursor: pointer;
+}
+#card-container.dragging {
+  cursor: grabbing;
+}
+#card-container.dragging .tarot-card {
+  pointer-events: none;
 }
 /* #card-loading {
 } */
@@ -28,7 +48,6 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   object-fit: cover;
   transition: transform 0.3s ease;
-  cursor: pointer;
 }
 .tarot-card:hover {
   transform: scale(1.05);
