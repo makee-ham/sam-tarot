@@ -14,6 +14,7 @@ export function renderBackOfCards(cards) {
 
   cards.forEach((card, i) => {
     const cardEl = document.createElement("img");
+    cardEl.addEventListener("contextmenu", (e) => e.preventDefault());
     cardEl.src = "./assets/cards/back/back.jpeg";
     cardEl.dataset.index = i;
     cardEl.classList.add("tarot-card");

@@ -3,6 +3,10 @@
   padding: 0;
   box-sizing: border-box;
 }
+html,
+body {
+  height: 100%;
+}
 
 .hidden {
   display: none;
@@ -22,7 +26,7 @@ img {
 }
 
 #card-container {
-  width: 90vw;
+  width: 95%;
   height: 300px;
   overflow: hidden;
   cursor: pointer;
@@ -39,6 +43,7 @@ img {
   width: calc(120px * 79);
   height: 300px;
   display: flex;
+  justify-content: center;
   align-items: center;
 }
 .tarot-card {
