@@ -15,7 +15,7 @@
     </section>
 
     <!-- 질문 입력 페이지 -->
-    <section id="question" class="hidden">
+    <section id="question" class="active">
       <button class="home-btn" data-target="landing">홈</button>
       <h2>당신의 고민을 들려주세요.</h2>
       <textarea
@@ -26,10 +26,11 @@
     </section>
 
     <!-- 카드 뽑기 페이지 -->
-    <section id="draw" class="active">
+    <section id="draw" class="hidden">
       <button class="home-btn" data-target="landing">홈</button>
       <h2>마음속 질문을 떠올리며, 천천히 세 장의 카드를 골라보세요.</h2>
       <p>이미 선택한 카드는 돌려놓을 수 없습니다.</p>
+      <div id="question-reminder"><!-- 유저 질문 표시 --></div>
       <div id="card-container">
         <div id="card-loading" class="hidden">셔플 중입니다...</div>
         <!-- 78장 뒷면 좌르륵 마우스 드래그 -->
