@@ -7,10 +7,9 @@ let selectedCards = [];
 export function handleCardClick(e) {
   if (dragState.isDragging || selectedCards.length >= 3) return;
 
+  const cards = getCards(); // cards' data
   const selectedCard = e.currentTarget;
   const selectedIndex = Number(selectedCard.dataset.index);
-  const cards = getCards(); // cards' data
-
   selectedCard.classList.add("fade-out");
   selectedCards.push(cards[selectedIndex]);
 
