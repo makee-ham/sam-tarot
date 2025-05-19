@@ -1,4 +1,5 @@
 import { state } from "../state.js";
+import { switchPage } from "./switchPage.js";
 import { renderSelectedCards } from "./renderCards.js";
 import { dragState } from "./dragScroll.js";
 
@@ -15,10 +16,11 @@ export function handleCardClick(e) {
   const total = 79 - state.selectedCards.length;
   cardArea.style.width = `${cardWidth * total}px`;
 
-  renderSelectedCards(state.selectedCards);
+  renderSelectedCards("selected-cards");
 
   if (state.selectedCards.length >= 3) {
     const resultBtn = document.querySelector("#get-result");
     resultBtn.disabled = false;
+    resultBtn.addEventListener("click", () => switchPage("draw", "result"));
   }
 }
