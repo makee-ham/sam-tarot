@@ -3,7 +3,7 @@ import { renderSelectedCards } from "./renderCards.js";
 import { dragState } from "./dragScroll.js";
 
 export function handleCardClick(e) {
-  if (dragState.isDragging || selectedCards.length >= 3) return;
+  if (dragState.isDragging || state.selectedCards.length >= 3) return;
 
   const selectedCard = e.currentTarget;
   const selectedIndex = Number(selectedCard.dataset.index);
