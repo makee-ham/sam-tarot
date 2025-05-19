@@ -17,10 +17,13 @@ export function renderBackOfCards(cards) {
   cards.forEach((card, i) => {
     const cardEl = document.createElement("img");
     cardEl.src = "./assets/cards/back/back.jpeg";
+    cardEl.alt = "카드 뒷면";
     cardEl.dataset.index = i;
     cardEl.classList.add("tarot-card");
+
     cardEl.addEventListener("contextmenu", (e) => e.preventDefault());
     cardEl.addEventListener("click", handleCardClick);
+
     cardArea.appendChild(cardEl);
   });
 }
@@ -32,6 +35,7 @@ export function renderSelectedCards(selectedCardsArr) {
   selectedCardsArr.forEach((card) => {
     const cardEl = document.createElement("img");
     cardEl.src = card.image;
+    cardEl.alt = card.name;
     cardEl.classList.add("selected-card");
     selectedCardsArea.appendChild(cardEl);
   });
