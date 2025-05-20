@@ -2,7 +2,7 @@ import { state } from "./state.js";
 import { switchPage } from "./ui/switchPage.js";
 import "./ui/questionInput.js";
 
-export function resetAll() {
+function resetAll() {
   state.cards = [];
   state.selectedCards = [];
   state.userQuestion = "";
@@ -20,4 +20,15 @@ window.addEventListener("DOMContentLoaded", () => {
   document
     .querySelector("#start-btn")
     .addEventListener("click", () => switchPage("landing", "question"));
+
+  document.querySelectorAll(".reset").forEach((btn) =>
+    btn.addEventListener("click", () => {
+      resetAll();
+      switchPage(e.currentTarget.dataset.from, "landing");
+    })
+  );
+  document.querySelector("#retry").addEventListener("click", () => {
+    resetAll();
+    switchPage(e.currentTarget.dataset.from, "question");
+  });
 });
