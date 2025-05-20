@@ -1,0 +1,24 @@
+{
+  "name": "sam-tarot",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/makee-ham/sam-tarot.git"
+  },
+  "keywords": [
+    "tarot",
+    "gpt",
+    "javascript"
+  ],
+  "author": "Ham Seoyeon(Makee/Ayla) <ina0312@naver.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/makee-ham/sam-tarot/issues"
+  },
+  "homepage": "https://github.com/makee-ham/sam-tarot#readme",
+  "description": ""
+}
