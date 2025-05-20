@@ -3,6 +3,10 @@ import { switchPage } from "./switchPage.js";
 import { renderSelectedCards } from "./renderCards.js";
 import { dragState } from "./dragScroll.js";
 
+function onResultClick() {
+  switchPage("draw", "result");
+}
+
 export function handleCardClick(e) {
   if (dragState.isDragging || state.selectedCards.length >= 3) return;
 
@@ -21,6 +25,7 @@ export function handleCardClick(e) {
   if (state.selectedCards.length >= 3) {
     const resultBtn = document.querySelector("#get-result");
     resultBtn.disabled = false;
-    resultBtn.addEventListener("click", () => switchPage("draw", "result"));
+    resultBtn.removeEventListener("click", onResultClick); // 중복제거...
+    resultBtn.addEventListener("click", onResultClick, { once: true }); // 다회클릭 방지...
   }
 }
