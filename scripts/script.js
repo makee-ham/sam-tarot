@@ -24,13 +24,17 @@ function resetAll() {
   const resultBtn = document.querySelector("#get-result");
   if (resultBtn) resultBtn.disabled = true;
 
-  const cardArea = document.querySelector("#card-area");
-  cardArea.innerHTML = "";
+  document.querySelector("#card-area").innerHTML = "";
 
-  const selectedCardsArea1 = document.querySelector(`#selected-cards`);
-  selectedCardsArea1.innerHTML = "";
-  const selectedCardsArea2 = document.querySelector(`#drawn-cards`);
-  selectedCardsArea2.innerHTML = "";
+  document.querySelector(`#selected-cards`).innerHTML = "";
+  document.querySelector(`#drawn-cards`).innerHTML = "";
+
+  const resultOutput = document.querySelector("#result-output");
+  if (resultOutput) resultOutput.textContent = "";
+  const userQuestion = document.querySelector("#user-question");
+  if (userQuestion) userQuestion.textContent = "";
+  const cardArea = document.querySelector("#drawn-cards");
+  if (cardArea) cardArea.innerHTML = "";
 }
 
 window.addEventListener("DOMContentLoaded", () => {
