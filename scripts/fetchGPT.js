@@ -1,5 +1,5 @@
 export async function fetchGPT(prompt) {
-  const isProd = window.location.hostname !== "localhost"; // 환경 감지
+  const isProd = window.location.hostname !== "localhost"; // 환경 감지(production 환경 여부)
   const API_URL = isProd ? "/api/gpt" : "http://localhost:3001/api/gpt";
 
   try {
