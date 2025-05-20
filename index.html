@@ -8,15 +8,15 @@
   </head>
   <body>
     <!-- 랜딩 페이지 -->
-    <section id="landing" class="hidden">
+    <section id="landing">
       <h1>삼타로</h1>
       <p>세 장의 카드로 해결하는 당신의 고민</p>
       <button id="start-btn">시작하기</button>
     </section>
 
     <!-- 질문 입력 페이지 -->
-    <section id="question" class="active">
-      <button class="home-btn" data-target="landing">홈</button>
+    <section id="question" class="hidden">
+      <button class="home-btn reset" data-from="question">홈</button>
       <h2>당신의 고민을 들려주세요.</h2>
       <textarea
         id="question-input"
@@ -27,7 +27,7 @@
 
     <!-- 카드 뽑기 페이지 -->
     <section id="draw" class="hidden">
-      <button class="home-btn" data-target="landing">홈</button>
+      <button class="home-btn reset" data-from="draw">홈</button>
       <h2>마음속 질문을 떠올리며, 천천히 세 장의 카드를 골라보세요.</h2>
       <p>이미 선택한 카드는 돌려놓을 수 없습니다.</p>
       <div id="question-reminder"><!-- 유저 질문 표시 --></div>
@@ -42,13 +42,15 @@
 
     <!-- 결과 페이지 -->
     <section id="result" class="hidden">
+      <button class="home-btn reset" data-from="result">홈</button>
       <h2>리딩 결과</h2>
       <div id="report">
+        <div id="result-loading" class="hidden">결과 해석 중입니다...</div>
         <div id="user-question"></div>
         <div id="drawn-cards"></div>
         <div id="result-output"></div>
       </div>
-      <button id="retry">다시 하기</button>
+      <button id="retry" data-from="result">다시 하기</button>
     </section>
 
     <script type="module" src="./scripts/script.js"></script>

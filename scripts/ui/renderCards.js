@@ -1,14 +1,5 @@
 import { handleCardClick } from "./clickCard.js";
-
-export function cardLoadingStart() {
-  const cardLoadingGuider = document.querySelector("#card-loading");
-  cardLoadingGuider.classList.remove("hidden");
-}
-
-export function cardLoadingOver() {
-  const cardLoadingGuider = document.querySelector("#card-loading");
-  cardLoadingGuider.classList.add("hidden");
-}
+import { state } from "../state.js";
 
 export function renderBackOfCards(cards) {
   const cardArea = document.querySelector("#card-area");
@@ -28,11 +19,11 @@ export function renderBackOfCards(cards) {
   });
 }
 
-export function renderSelectedCards(selectedCardsArr) {
-  const selectedCardsArea = document.querySelector("#selected-cards");
+export function renderSelectedCards(id) {
+  const selectedCardsArea = document.querySelector(`#${id}`);
   selectedCardsArea.innerHTML = "";
 
-  selectedCardsArr.forEach((card) => {
+  state.selectedCards.forEach((card) => {
     const cardEl = document.createElement("img");
     cardEl.src = card.image;
     cardEl.alt = card.name;
