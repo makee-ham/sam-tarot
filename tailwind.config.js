@@ -3,6 +3,10 @@ module.exports = {
   plugins: [],
   theme: {
     extend: {
+      fontFamily: {
+        title: ['"Gowun Batang"', "serif"],
+        body: ['"Nanum Gothic"', "sans-serif"],
+      },
       colors: {
         primary: "#845EC2",
         secondary: "#D65DB1",
