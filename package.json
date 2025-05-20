@@ -4,7 +4,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "tailwind": "npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch"
   },
   "repository": {
     "type": "git",
@@ -23,8 +23,11 @@
   "homepage": "https://github.com/makee-ham/sam-tarot#readme",
   "description": "",
   "dependencies": {
+    "@tailwindcss/cli": "^4.1.7",
+    "animate.css": "^4.1.1",
     "cors": "^2.8.5",
     "dotenv": "^16.5.0",
-    "express": "^5.1.0"
+    "express": "^5.1.0",
+    "tailwindcss": "^4.1.7"
   }
 }
