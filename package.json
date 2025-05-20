@@ -20,5 +20,8 @@
     "url": "https://github.com/makee-ham/sam-tarot/issues"
   },
   "homepage": "https://github.com/makee-ham/sam-tarot#readme",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "dotenv": "^16.5.0"
+  }
 }
