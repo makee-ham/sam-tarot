@@ -1,6 +1,9 @@
 export async function fetchGPT(prompt) {
+  const isProd = window.location.hostname !== "localhost"; // 환경 감지
+  const API_URL = isProd ? "/api/gpt" : "http://localhost:3001/api/gpt";
+
   try {
-    const res = await fetch("http://localhost:3001/api/gpt", {
+    const res = await fetch(API_URL, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ prompt }),
