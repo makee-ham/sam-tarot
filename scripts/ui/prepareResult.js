@@ -1,4 +1,5 @@
 import { state } from "../state.js";
+import { fetchGPT } from "../fetchGPT.js";
 import { resultLoadingStart, resultLoadingOver } from "./pageLoading.js";
 import { renderSelectedCards } from "./renderCards.js";
 
