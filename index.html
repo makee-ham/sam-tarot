@@ -8,6 +8,10 @@
       href="https://fonts.googleapis.com/css2?family=Gowun+Batang&family=Nanum+Gothic&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
     <link rel="stylesheet" href="./styles/style.css" />
   </head>
   <body>
@@ -20,8 +24,14 @@
       </section>
 
       <!-- 질문 입력 페이지 -->
-      <section id="question" class="hidden">
-        <button class="home-btn reset" data-from="question">홈</button>
+      <section id="question" class="hidden centered">
+        <button
+          class="home-btn reset"
+          aria-label="홈으로 이동"
+          data-from="question"
+        >
+          <i class="fas fa-home"></i>
+        </button>
         <h2>당신의 고민을 들려주세요.</h2>
         <textarea
           id="question-input"
@@ -31,8 +41,14 @@
       </section>
 
       <!-- 카드 뽑기 페이지 -->
-      <section id="draw" class="hidden">
-        <button class="home-btn reset" data-from="draw">홈</button>
+      <section id="draw" class="hidden centered">
+        <button
+          class="home-btn reset"
+          aria-label="홈으로 이동"
+          data-from="draw"
+        >
+          <i class="fas fa-home"></i>
+        </button>
         <h2>마음속 질문을 떠올리며, 천천히 세 장의 카드를 골라보세요.</h2>
         <p>이미 선택한 카드는 돌려놓을 수 없습니다.</p>
         <div id="question-reminder"><!-- 유저 질문 표시 --></div>
@@ -47,7 +63,13 @@
 
       <!-- 결과 페이지 -->
       <section id="result" class="hidden">
-        <button class="home-btn reset" data-from="result">홈</button>
+        <button
+          class="home-btn reset"
+          aria-label="홈으로 이동"
+          data-from="result"
+        >
+          <i class="fas fa-home"></i>
+        </button>
         <h2>리딩 결과</h2>
         <div id="report">
           <div id="result-loading" class="hidden">결과 해석 중입니다...</div>
