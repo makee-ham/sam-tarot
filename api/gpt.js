@@ -1,5 +1,3 @@
-// gpt.js (Vercel serverless function + 로컬 대응용)
-
 if (process.env.NODE_ENV !== "production") {
   const dotenv = await import("dotenv");
   dotenv.config();

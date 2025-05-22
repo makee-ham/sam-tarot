@@ -4,54 +4,84 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>삼타로</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gowun+Batang&family=Nanum+Gothic&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
     <link rel="stylesheet" href="./styles/style.css" />
   </head>
   <body>
-    <!-- 랜딩 페이지 -->
-    <section id="landing">
-      <h1>삼타로</h1>
-      <p>세 장의 카드로 해결하는 당신의 고민</p>
-      <button id="start-btn">시작하기</button>
-    </section>
+    <div id="container">
+      <!-- 랜딩 페이지 -->
+      <section id="landing">
+        <h1>삼타로</h1>
+        <p>세 장의 카드로 해결하는 당신의 고민</p>
+        <button id="start-btn">시작하기</button>
+      </section>
 
-    <!-- 질문 입력 페이지 -->
-    <section id="question" class="hidden">
-      <button class="home-btn reset" data-from="question">홈</button>
-      <h2>당신의 고민을 들려주세요.</h2>
-      <textarea
-        id="question-input"
-        placeholder="최대한 구체적으로 적어주시면 더욱 정확한 결과를 얻을 수 있습니다."
-      ></textarea>
-      <button id="go-to-draw" disabled>카드 뽑기</button>
-    </section>
+      <!-- 질문 입력 페이지 -->
+      <section id="question" class="hidden centered">
+        <button
+          class="home-btn reset"
+          aria-label="홈으로 이동"
+          data-from="question"
+        >
+          <i class="fas fa-home"></i>
+        </button>
+        <h2>당신의 고민을 들려주세요.</h2>
+        <textarea
+          id="question-input"
+          placeholder="최대한 구체적으로 적어주시면 더욱 정확한 결과를 얻을 수 있습니다."
+        ></textarea>
+        <button id="go-to-draw" disabled>카드 뽑기</button>
+      </section>
 
-    <!-- 카드 뽑기 페이지 -->
-    <section id="draw" class="hidden">
-      <button class="home-btn reset" data-from="draw">홈</button>
-      <h2>마음속 질문을 떠올리며, 천천히 세 장의 카드를 골라보세요.</h2>
-      <p>이미 선택한 카드는 돌려놓을 수 없습니다.</p>
-      <div id="question-reminder"><!-- 유저 질문 표시 --></div>
-      <div id="card-container">
-        <div id="card-loading" class="hidden">셔플 중입니다...</div>
-        <!-- 78장 뒷면 좌르륵 마우스 드래그 -->
-        <div id="card-area"></div>
-      </div>
-      <div id="selected-cards"></div>
-      <button id="get-result" disabled>리딩 결과 확인하기</button>
-    </section>
+      <!-- 카드 뽑기 페이지 -->
+      <section id="draw" class="hidden centered">
+        <button
+          class="home-btn reset"
+          aria-label="홈으로 이동"
+          data-from="draw"
+        >
+          <i class="fas fa-home"></i>
+        </button>
+        <h2>마음속 질문을 떠올리며, 천천히 세 장의 카드를 골라보세요.</h2>
+        <p>이미 선택한 카드는 돌려놓을 수 없습니다.</p>
+        <div id="question-reminder"><!-- 유저 질문 표시 --></div>
+        <div id="card-container">
+          <div id="card-loading" class="hidden">셔플 중입니다...</div>
+          <!-- 78장 뒷면 좌르륵 마우스 드래그 -->
+          <div id="card-area"></div>
+        </div>
+        <div id="selected-cards"></div>
+        <button id="get-result" disabled>리딩 결과 확인하기</button>
+      </section>
 
-    <!-- 결과 페이지 -->
-    <section id="result" class="hidden">
-      <button class="home-btn reset" data-from="result">홈</button>
-      <h2>리딩 결과</h2>
-      <div id="report">
-        <div id="result-loading" class="hidden">결과 해석 중입니다...</div>
-        <div id="user-question"></div>
-        <div id="drawn-cards"></div>
-        <div id="result-output"></div>
-      </div>
-      <button id="retry" data-from="result">다시 하기</button>
-    </section>
+      <!-- 결과 페이지 -->
+      <section id="result" class="hidden">
+        <button
+          class="home-btn reset"
+          aria-label="홈으로 이동"
+          data-from="result"
+        >
+          <i class="fas fa-home"></i>
+        </button>
+        <h2>리딩 결과</h2>
+        <div id="report">
+          <div id="result-loading" class="hidden">결과 해석 중입니다...</div>
+          <div id="user-question"></div>
+          <div id="drawn-cards"></div>
+          <div id="result-output"></div>
+        </div>
+        <button id="retry" data-from="result">다시 하기</button>
+      </section>
+    </div>
+
+    <div class="force-include hidden"></div>
 
     <script type="module" src="./scripts/script.js"></script>
   </body>

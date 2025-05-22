@@ -1,47 +1,62 @@
-// 카드 마우스 드래그 스크롤 & 스와이프
-// 움직인 방향과 거리 = 움직인 결과 좌표 - 시작 좌표 (container는 고정이니 .offsetLeft는 상수)
+// 카드 마우스 드래그 & 터치 스크롤
 export const dragState = {
   isDragging: false,
 };
 
 export function addDragScroll(container) {
   let isDown = false;
-  let startX;
-  let scrollLeft;
+  let startX = 0;
+  let scrollLeft = 0;
 
-  container.addEventListener("mousedown", (e) => {
+  function start(e, clientX) {
     isDown = true;
     dragState.isDragging = false;
-    startX = e.pageX - container.offsetLeft;
+    startX = clientX - container.offsetLeft;
     scrollLeft = container.scrollLeft;
     container.classList.add("dragging");
-  });
+  }
 
-  container.addEventListener("mousemove", (e) => {
+  function move(e, clientX) {
     if (!isDown) return;
-    const x = e.pageX - container.offsetLeft;
+    const x = clientX - container.offsetLeft;
     const walk = (x - startX) * 1.5;
-    // 5px 초과 이동 시 dragging 간주
-    if (Math.abs(walk) > 5) {
-      dragState.isDragging = true;
-    }
+    if (Math.abs(walk) > 5) dragState.isDragging = true;
     container.scrollLeft = scrollLeft - walk;
     e.preventDefault();
-  });
+  }
 
-  container.addEventListener("mouseup", (e) => {
+  function end(e) {
     isDown = false;
     container.classList.remove("dragging");
-
-    // 드래그였을 경우 클릭 이벤트 취소
     if (dragState.isDragging) {
       e.preventDefault();
       e.stopPropagation();
     }
-  });
+  }
 
-  container.addEventListener("mouseleave", () => {
-    isDown = false;
-    container.classList.remove("dragging");
-  });
+  container.addEventListener("mousedown", (e) => start(e, e.pageX));
+  container.addEventListener("mousemove", (e) => move(e, e.pageX));
+  container.addEventListener("mouseup", end);
+  container.addEventListener("mouseleave", end);
+
+  container.addEventListener(
+    "touchstart",
+    (e) => {
+      const touch = e.touches[0];
+      start(e, touch.pageX);
+    },
+    { passive: false }
+  );
+
+  container.addEventListener(
+    "touchmove",
+    (e) => {
+      const touch = e.touches[0];
+      move(e, touch.pageX);
+    },
+    { passive: false }
+  );
+
+  container.addEventListener("touchend", end);
+  container.addEventListener("touchcancel", end);
 }
