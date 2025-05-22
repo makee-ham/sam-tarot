@@ -17,6 +17,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  /* 모바일에서 탭 했을 때 보이는 흉측한 네모 안 보이게 */
+  -webkit-tap-highlight-color: transparent;
 }
 
 html,
@@ -79,6 +81,28 @@ section.centered {
 }
 
 /* Typography */
+
+/* 드래그 막기 */
+h1,
+h2,
+p,
+button,
+.home-btn,
+#start-btn,
+#go-to-draw,
+#get-result,
+#retry {
+  user-select: none;
+}
+
+/* 드래그 허용 */
+#user-question,
+#result-output,
+#report,
+#question-reminder {
+  user-select: text;
+}
+
 h1,
 h2 {
   font-family: "Gowun Batang", serif;
@@ -233,6 +257,10 @@ textarea#question-input::placeholder {
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  height: auto;
+  min-height: auto;
+  overflow-y: visible;
 }
 
 #question-reminder {
@@ -251,7 +279,8 @@ textarea#question-input::placeholder {
 #card-container {
   position: relative;
   width: 100%;
-  height: 240px;
+  height: auto;
+  min-height: 260px;
   overflow-x: auto;
   overflow-y: hidden;
   display: flex;
@@ -305,7 +334,7 @@ textarea#question-input::placeholder {
 #card-area {
   display: flex;
   gap: 0.8rem;
-  /* height: 180px; */
+  height: 100%;
   align-items: center;
   padding: 0 0.5rem;
 }
@@ -485,12 +514,12 @@ section.hidden {
 
   .tarot-card,
   .selected-card {
-    width: 100px;
-    height: 166px;
+    width: 90px;
+    aspect-ratio: 3 / 5;
   }
 
   #card-container {
-    height: 200px;
+    min-height: 220px;
   }
 
   #drawn-cards {
@@ -522,11 +551,11 @@ section.hidden {
   .tarot-card,
   .selected-card {
     width: 80px;
-    height: 133px;
+    aspect-ratio: 3 / 5;
   }
 
   #card-container {
-    height: 180px;
+    height: 160px;
   }
 
   #landing h1 {
