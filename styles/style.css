@@ -496,7 +496,21 @@ section.hidden {
 
 /* 반응형 */
 @media (max-width: 600px) {
+  /* textarea, 카드컨테이너, 리포트 등 폭 제한한 요소 */
+  textarea#question-input,
+  #question-reminder,
+  #report,
+  #selected-cards,
+  #card-container {
+    max-width: 90%;
+    width: 100%;
+  }
+
   #container {
+    padding: 1rem;
+  }
+
+  section {
     padding: 1rem;
   }
 
@@ -548,17 +562,56 @@ section.hidden {
 }
 
 @media (max-width: 400px) {
+  textarea#question-input,
+  #question-reminder,
+  #report,
+  #selected-cards,
+  #card-container {
+    max-width: 98%;
+  }
+
+  section {
+    padding: 0.25rem;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+  }
+
   .tarot-card,
   .selected-card {
-    width: 80px;
+    width: 65px;
     aspect-ratio: 3 / 5;
   }
 
+  #drawn-cards,
+  #selected-cards {
+    gap: 0.5rem;
+  }
+
   #card-container {
-    height: 160px;
+    height: 150px;
   }
 
   #landing h1 {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
+  }
+
+  #landing p {
+    font-size: 1rem;
+  }
+
+  button,
+  .home-btn.reset,
+  #start-btn,
+  #go-to-draw,
+  #get-result,
+  #retry {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+  }
+
+  #result-output {
+    font-size: 0.9rem;
   }
 }
